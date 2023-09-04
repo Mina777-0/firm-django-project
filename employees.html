@@ -1,0 +1,20 @@
+{% extends "firm/layout.html" %}
+
+{% block title %}
+    Employees
+{% endblock %}
+
+
+{% block body %}
+    <div>
+        <ul>
+            {% for d in dept %}
+                <li>{{ d }}</li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+    
+
+    
+{% endblock %}

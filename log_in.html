@@ -1,0 +1,30 @@
+{% extends "firm/layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+
+    
+
+    <div style="text-align: center;">
+        {% if message %}
+            <h2>{{ message }}</h2>
+        {% endif %}
+        
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Log in">
+        </form>
+    
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button><a href="{% url 'signup' %}">Sign Up</a></button>
+    </div>
+    
+
+{% endblock %}

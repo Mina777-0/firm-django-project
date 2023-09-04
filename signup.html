@@ -1,0 +1,41 @@
+{% extends "firm/layout.html" %}
+
+{% block title %}
+    Signup
+{% endblock %}
+
+{% block body %}
+    <div style="text-align: center;">
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                    {{ form.username.label }}
+                    {{ form.username }}
+                        <br><br>
+                    {{ form.first_name.label }}
+                    {{ form.first_name }}
+                    <br><br>
+                    {{ form.last_name.label }}
+                    {{ form.last_name }}
+                    <br><br>
+                    {{ form.email.label }}
+                    {{ form.email }}
+                    <br><br>
+                    {{ form.password1.label }}
+                    {{ form.password1 }}
+                    <br><br>
+                    {{ form.password2.label }}
+                    {{ form.password2 }}
+                    <br><br>
+                <input type="submit" value="Signup">
+            </div><br>
+                        
+           
+        </form>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'log_in' %}" style="font-weight: bold;">Return to the login page</a>
+    </div>
+        
+{% endblock %}

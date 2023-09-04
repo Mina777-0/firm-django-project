@@ -1,0 +1,22 @@
+{% extends "firm/layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <div style="text-align: right;">
+        <h1>Welcome, {{ request.user }}!</h1>
+        <p>Username: {{ request.user.username }}</p>
+        <p>email: {{ request.user.email }}</p>
+    </div>
+        <br>
+    <div style="text-align: right;">
+        <button><a href="{% url 'log_in' %}">Log out</a></button>
+    </div>
+    <div>
+        <ul>
+            <li><a href="{% url 'depts' %}">Departments</a></li>
+        </ul>
+    </div>
+{% endblock %}

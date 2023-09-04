@@ -1,0 +1,28 @@
+{% extends "firm/layout.html" %}
+
+{% block title %}
+    Departments
+{% endblock %}
+
+
+{% block body %}
+    <div>
+        <ul>
+            {% for dept in depts %}
+                <li><a href="{% url 'employees' dept.id %}">{{ dept }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br><br>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+
+            <input type="submit" value="Add an amployee">
+        </form>
+
+    </div>
+        
+    
+{% endblock %}
